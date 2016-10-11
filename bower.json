@@ -1,0 +1,26 @@
+{
+  "name": "hrgestor",
+  "authors": [
+    "EliuX <eliecerhdz@gmail.com>"
+  ],
+  "description": "Gestor de Recursos Humanos de Experteam",
+  "main": "",
+  "keywords": [
+    "experteam",
+    "human",
+    "resources"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/assets/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
