@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -19,13 +20,14 @@ class Employee
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $addresss;
+    private $address;
 
     /**
      * @ORM\Column(type="text")
@@ -34,6 +36,8 @@ class Employee
 
     /**
      * @ORM\Column(type="decimal", scale=2)
+     * @Assert\NotBlank()
+     * @Assert\GreaterThanOrEqual(0)
      */
     private $salary;
 
@@ -74,29 +78,6 @@ class Employee
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set addresss
-     *
-     * @param string $addresss
-     * @return Employee
-     */
-    public function setAddresss($addresss)
-    {
-        $this->addresss = $addresss;
-
-        return $this;
-    }
-
-    /**
-     * Get addresss
-     *
-     * @return string 
-     */
-    public function getAddresss()
-    {
-        return $this->addresss;
     }
 
     /**
@@ -167,5 +148,29 @@ class Employee
     public function getDepartment()
     {
         return $this->department;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     *
+     * @return Employee
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 }

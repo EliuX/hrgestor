@@ -2,14 +2,35 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Experteam Human Resources{% endblock %}</title>
+        <title>{% block title %}{{ project_name }}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="stylesheet"
               href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('assets/main.css') }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+     <div class="container">
+        {% block header %}
+            <div class="masthead">
+                <ul class="nav nav-pills pull-right">
+                    <li class="{% if app.request.attributes.get('_route') starts with 'empleados' %}active{% endif %}"><a href="/empleados">Empleados</a></li>
+                    <li class="{% if app.request.attributes.get('_route') starts with 'departamentos' %}active{% endif %}"><a href="/departamentos">Departamentos</a></li>
+                </ul>
+                <h3 class="muted">{{ project_name }}</h3>
+            </div>
+            <hr>
+
+        {% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}
+        <div class="footer">
+            <hr>
+            <p>© {{ enterprise_name }} 2016</p>
+        </div>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
+     </div>
     </body>
 </html>

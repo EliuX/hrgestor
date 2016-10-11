@@ -1,45 +1,36 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Employees list</h1>
-
-    <table>
-        <thead>
+    <h1>Listado de Empleados</h1>
+    <table class="table table-striped">
+        <thead class="thead-inverse">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Addresss</th>
-                <th>Telephone</th>
-                <th>Salary</th>
-                <th>Actions</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Salario</th>
+                <th>Departamento</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for employee in employees %}
             <tr>
-                <td><a href="{{ path('empleados_show', { 'id': employee.id }) }}">{{ employee.id }}</a></td>
-                <td>{{ employee.name }}</td>
-                <td>{{ employee.addresss }}</td>
-                <td>{{ employee.telephone }}</td>
-                <td>{{ employee.salary }}</td>
+                <td><strong>{{ employee.name }}</strong></td>
+                <td>{{ employee.address }}</td>
+                <td><a href="tel:{{ employee.telephone }}">{{ employee.telephone }}</a></td>
+                <td>{{ employee.salary }} USD</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('empleados_show', { 'id': employee.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('empleados_edit', { 'id': employee.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                <a target="_blank" href="{{ path('departamentos_show', { 'id': employee.department.id }) }}">{{ employee.department }}</a>
+                </td>
+                <td>
+                <a href="{{ path('empleados_show', { 'id': employee.id }) }}" class="btn btn-sm">mostrar</a>                
+                <a href="{{ path('empleados_edit', { 'id': employee.id }) }}" class="btn btn-sm">editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('empleados_new') }}">Create a new employee</a>
-        </li>
-    </ul>
+    <a href="{{ path('empleados_new') }}" class="btn btn-primary btn-lg btn-block">Agregar nuevo empleado</a>
 {% endblock %}

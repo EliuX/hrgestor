@@ -31,6 +31,12 @@ class LoadDepartmentData extends AbstractFixture implements OrderedFixtureInterf
         $manager->persist($department);
         $this->addReference("dep.admin", $department);
 
+        /*$department = new Department();
+        $department->setName("Prueba");
+        $department->setDescription("Encargados de hacer testing.");
+        $manager->persist($department);
+        $this->addReference("dep.test", $department);*/
+
         $manager->flush();
     }
 

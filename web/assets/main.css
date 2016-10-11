@@ -1,0 +1,10 @@
+.main-hero{
+    background-image: url("images/hero.png");
+    background-position: center bottom;
+    min-height: 490px;
+}
+
+.main-hero .description{
+    color: white;
+    text-align: center;
+}

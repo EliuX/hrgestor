@@ -17,7 +17,7 @@ class LoadEmployeeData extends AbstractFixture implements OrderedFixtureInterfac
 
         $employee = new Employee();
         $employee->setName("Steve Jobs");
-        $employee->setAddresss("Palo Alto Ave. 1234");
+        $employee->setaddress("Palo Alto Ave. 1234");
         $employee->setSalary("1000000.50");
         $employee->setTelephone("+1 234 234242");
         $employee->setDepartment($depAdmin);
@@ -25,7 +25,7 @@ class LoadEmployeeData extends AbstractFixture implements OrderedFixtureInterfac
 
         $employee = new Employee();
         $employee->setName("Steve Wozniak");
-        $employee->setAddresss("Palo Alto Ave. 1235");
+        $employee->setaddress("Palo Alto Ave. 1235");
         $employee->setSalary("5000.00");
         $employee->setTelephone("+1 999 111111");
         $employee->setDepartment($depDevelopment);
@@ -33,7 +33,7 @@ class LoadEmployeeData extends AbstractFixture implements OrderedFixtureInterfac
 
         $employee = new Employee();
         $employee->setName("Marissa Meyer");
-        $employee->setAddresss("Palo Alto Ave. 555");
+        $employee->setaddress("Palo Alto Ave. 555");
         $employee->setSalary("2000000.00");
         $employee->setTelephone("+1 666 66611");
         $employee->setDepartment($depAdmin);
@@ -41,7 +41,7 @@ class LoadEmployeeData extends AbstractFixture implements OrderedFixtureInterfac
 
         $employee = new Employee();
         $employee->setName("Martin Fowler");
-        $employee->setAddresss("Abraham Lincoln 323, Washington DC");
+        $employee->setaddress("Abraham Lincoln 323, Washington DC");
         $employee->setSalary("50000.00");
         $employee->setTelephone("+1 555 111111");
         $employee->setDepartment($depDevelopment);
@@ -49,7 +49,7 @@ class LoadEmployeeData extends AbstractFixture implements OrderedFixtureInterfac
 
         $employee = new Employee();
         $employee->setName("Eliecer Hernández Garbey");
-        $employee->setAddresss("Madrid e Isabel la Católica");
+        $employee->setaddress("Madrid e Isabel la Católica");
         $employee->setSalary("50000");
         $employee->setTelephone("+985191605");
         $employee->setDepartment($depHumanResources);

@@ -1,16 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Employee creation</h1>
+    <h1>Agregar empleado</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    {{ form_start(form, { 'attr': {'class': 'form-vertical'} }) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('empleados_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+        {{ form_label(form.name, 'Nombre') }}
+        {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+        <div class="form-control-feedback">{{ form_errors(form.name) }}</div>
+
+    </div>
+    <div class="form-group">
+        {{ form_label(form.address, 'Dirección') }}
+        {{ form_widget(form.address, { 'attr': {'class': 'form-control'} }) }}
+        <div class="form-control-feedback">{{ form_errors(form.address) }}</div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.telephone, 'Teléfono') }}
+        {{ form_widget(form.telephone, { 'attr': {'class': 'form-control'} }) }}
+        <div class="form-control-feedback">{{ form_errors(form.telephone) }}</div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.salary, 'Salario') }}
+        {{ form_widget(form.salary, { 'attr': {'class': 'form-control'} }) }}
+        <div class="form-control-feedback">{{ form_errors(form.salary) }}</div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.department, 'Departamento') }}
+        {{ form_widget(form.department, { 'attr': {'class': 'form-control'} }) }}
+        <div class="form-control-feedback">{{ form_errors(form.department) }}</div>
+    </div>
+    <input class="btn butn-success" type="submit" value="Salvar" />
+    <a href="{{ path('empleados_index') }}" class="btn btn-default">Regresar al listado</a>
+    {{ form_widget(form) }}
 {% endblock %}

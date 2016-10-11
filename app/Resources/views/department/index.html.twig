@@ -1,34 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Departments list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
+    <h1>Listado de departamentos</h1>
+    <table class="table table-striped">
+        <thead class="thead-inverse">
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+        </tr>
         </thead>
         <tbody>
         {% for department in departments %}
             <tr>
-                <td><a href="{{ path('departamentos_show', { 'id': department.id }) }}">{{ department.id }}</a></td>
-                <td>{{ department.name }}</td>
+                <td><strong>{{ department.name }}</strong></td>
                 <td>{{ department.description }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('departamentos_show', { 'id': department.id }) }}">show</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('departamentos_show', { 'id': department.id }) }}" class="btn btn-sm">mostrar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    
 {% endblock %}

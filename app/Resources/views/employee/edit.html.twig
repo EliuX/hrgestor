@@ -1,21 +1,45 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Employee edit</h1>
+    <h1>Editar empleado</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('empleados_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        {{ form_errors(edit_form) }}
+
+        <div class="form-group">
+            {{ form_label(edit_form.name, 'Nombre') }}
+            {{ form_widget(edit_form.name, { 'attr': {'class': 'form-control'} }) }}
+            <div class="form-control-feedback">{{ form_errors(edit_form.name) }}</div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(edit_form.address, 'Dirección') }}
+            {{ form_widget(edit_form.address, { 'attr': {'class': 'form-control'} }) }}
+            <div class="form-control-feedback">{{ form_errors(edit_form.address) }}</div>
+        </div>
+        <div class="form-group">
+            {{ form_label(edit_form.telephone, 'Teléfono') }}
+            {{ form_widget(edit_form.telephone, { 'attr': {'class': 'form-control'} }) }}
+            <div class="form-control-feedback">{{ form_errors(edit_form.telephone) }}</div>
+        </div>
+        <div class="form-group">
+            {{ form_label(edit_form.salary, 'Salario') }}
+            {{ form_widget(edit_form.salary, { 'attr': {'class': 'form-control'} }) }}
+            <div class="form-control-feedback">{{ form_errors(edit_form.salary) }}</div>
+        </div>
+        <div class="form-group">
+            {{ form_label(edit_form.department, 'Departamento') }}
+            {{ form_widget(edit_form.department, { 'attr': {'class': 'form-control'} }) }}
+            <div class="form-control-feedback">{{ form_errors(edit_form.department) }}</div>
+        </div>
+            <input class="btn butn-success" type="submit" value="Salvar" />
+            <a href="{{ path('empleados_index') }}" class="btn btn-default">Regresar al listado</a>
+        {{ form_widget(edit_form) }}
+        <hr>
+        {{ form_end(edit_form) }}
+        {{ form_start(delete_form) }}
+         <input class="btn-link" type="submit" value="Eliminar">
+        {{ form_end(delete_form) }}
+
 {% endblock %}

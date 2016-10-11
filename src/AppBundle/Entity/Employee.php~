@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -19,13 +20,14 @@ class Employee
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $addresss;
+    private $address;
 
     /**
      * @ORM\Column(type="text")
@@ -34,6 +36,8 @@ class Employee
 
     /**
      * @ORM\Column(type="decimal", scale=2)
+     * @Assert\NotBlank()
+     * @Assert\GreaterThanOrEqual(0)
      */
     private $salary;
 

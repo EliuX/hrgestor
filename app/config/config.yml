@@ -34,6 +34,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+     project_name: "Gestor de Recursos Humanos"
+     enterprise_name: "Experteam"
 
 # Doctrine Configuration
 doctrine:
