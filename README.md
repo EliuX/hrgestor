@@ -1,40 +1,40 @@
 # hrgestor
-Prueba de programación en PHP realizada por Experteam durante la entrevista de trabajo
+PHP programming test made by Experteam during a work enterview
 
-Por cada cambio que haga en la estructura de una entidad ejecute
+## Instructions
+
+1. For each change made to the structure of an entity please execute:
 
 ```
   php app/console doctrine:generate:entities AppBundle
 ```
 
-Luego genere la base de datos en la carpeta `app/data`. Crée la carpeta:
+2. Afterwards generate the database in the folder `app/data`. Please create the folder:
 
 ```
  mkdir -p app\data   
 ```
 
-Genere(o actualice) el schema de datos
+3. Generate/Update the data schema:
 
 ```
  php app/console doctrine:schema:update --force
 ```
 
-Se instaló el modulo [DoctrineFixturesBundle](https://github.com/doctrine/DoctrineFixturesBundle) para realizar migraciones
+4. The module [DoctrineFixturesBundle](https://github.com/doctrine/DoctrineFixturesBundle) was installed for migrations:
 
 ```
  php app/console doctrine:fixtures:load
 
 ```
 
-Por ultimo cerciórese de que su configuración de conexion a la base de datos tiene las credenciales correctas
-en `/app/config/parameters.yml`.
+5. Last but not least, make sure your database configuration has the right credentials in `/app/config/parameters.yml`.
 
-
-Ejecute la aplicacion
+6. Execute the application
 
 ```
  php app/console server:run
 ```
 
-Eso es todo.
+Thats it.
 
